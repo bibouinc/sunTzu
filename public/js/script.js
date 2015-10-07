@@ -73,6 +73,11 @@ socket.on('round', function (msg) {
 	newRound(msg);
 });
 
+//update the playedCard if the color is not this one
+socket.on('playedCard', function(msg) {
+	
+});
+
 socket.on('yourHand', function (msg) {
 	$('#cartes').empty();
 	
@@ -117,13 +122,25 @@ socket.on('yourHand', function (msg) {
 	$("#cartes,#card-0,#card-1,#card-2,#card-3,#card-4").sortable({ connectWith: "#cartes,#card-0,#card-1,#card-2,#card-3,#card-4" });
 
 	$("#card-0,#card-1,#card-2,#card-3,#card-4").on("sortreceive", function (event, ui) {
-		console.log($(this));
-		console.log($(this).children("div").length);
+		//console.log($(this));
+		//console.log($(this).children("div").length);	
 		
 		//ensure only one card per slot
 		if ($(this).children("div").length > 1) {
 			$(ui.sender).sortable('cancel');
-		}	
+			return; 
+		}
+		
+		var playedcard; 
+		playedcard.region = ui.item.attr('id'));
+		playedcard.card = $(this).attr('value'));
+		io.emit("playCard",playedcard);
+		
+		
+		//var combo = [$(this).value, $(this).data().sortable.currentItem.id];
+		
+		//send card to server
+		//console.log(combo);
 	});
 });
 

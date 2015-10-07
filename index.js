@@ -47,6 +47,12 @@ io.on('connection', function (socket) {
 		socket.emit('yourHand', game.players[msg].hand);
 	});
 	
+	//update the card selected
+	socket.on('playCard', function (msg){
+		game.region[msg.region].card[socket.color] = msg.card;
+		io.emit('playedCard',[socket.color,msg.region]]);
+	});
+	
 	socket.on('chat message', function (msg) {
 		io.emit('chat message', msg);
 	});
@@ -108,12 +114,11 @@ function Region(name, points, neighbors) {
 	this.blueArmy = 0;
 	this.redArmy = 0;
 	
-	this.sixPlayed = {}
+	this.sixPlayed = {};
 	this.sixPlayed["blue"] = false;
 	this.sixPlayed["red"] = false;
 	
-	this.blueCardID = 0;
-	this.redCardID = 0;
+	this.card = {};
 	
 	this.toConsole = function () {
 		console.log(this.name 
