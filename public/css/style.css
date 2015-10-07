@@ -1,0 +1,450 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 13px Helvetica, Arial;
+    background-color: darkblue;
+    color: white;
+}
+
+form {
+    background: #000;
+    padding: 3px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+    form input {
+        border: 0;
+        padding: 10px;
+        width: 90%;
+        margin-right: .5%;
+    }
+
+    form button {
+        width: 9%;
+        background: rgb(130, 224, 255);
+        border: none;
+        padding: 10px;
+    }
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+    #messages li {
+        padding: 5px 10px;
+    }
+
+        #messages li:nth-child(odd) {
+            background: #eee;
+        }
+
+img {
+    position: absolute;
+    z-index: 1;
+}
+
+#container-top-right {
+    position: relative;
+    float: right;
+    width: 200px;
+}
+
+#status {
+    height: 35px;
+    font-size: 30px;
+    color: white;
+}
+
+.ready {
+    background-color: green;
+}
+
+.wait {
+    background-color: orange;
+}
+
+#container {
+    //zoom:50%;
+    display: inline-block;
+    float: left;
+    background-size: 100% 100%;
+    width: 870px;
+    height: 574px;
+    margin: 0 0;
+    background-image: url("http://img15.hostingpics.net/pics/869102greenshot20151002221005.png");
+    position: relative;
+}
+
+#canvas {
+    position: relative;
+    size: 500px 500px;
+    z-index: 20;
+}
+
+.region {
+    position: absolute;
+}
+
+#region #jinyan {
+    padding-left: 30%;
+    padding-top: 5%;
+}
+
+#region #hanqi {
+    position: absolute;
+    padding-left: 55%;
+    padding-top: 15%;
+}
+
+#region #qin {
+    position: absolute;
+    padding-left: 15%;
+    padding-top: 20%;
+}
+
+#region #chu {
+    position: absolute;
+    padding-left: 28%;
+    padding-top: 35%;
+}
+
+#region #wu {
+    position: absolute;
+    padding-left: 55%;
+    padding-top: 40%;
+}
+
+#region .circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    line-height: 150px;
+    z-index: 30;
+    position: relative;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+}
+
+#region .none {
+    background: rgba(0,0,0,0);
+}
+
+#region .red {
+    background: rgba(255,0,0,0.5);
+}
+
+#region .blue {
+    background: rgba(0,0,255,0.5);
+}
+
+#round {
+    position: absolute;
+    left: 86%;
+    top: 04%;
+}
+
+#round-child {
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    line-height: 70px;
+    background: rgba(255,215,0,0.8);
+    z-index: 30;
+    position: relative;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+}
+
+#pickAcolor-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(22,22,22,0.5); /* complimenting your modal colors */
+    z-index: 99;
+}
+
+.PopupPanel {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 100;
+    background-color: yellow;
+    height: 30%;
+    margin-top: -20%;
+    width: 50%;
+    margin-left: -25%;
+}
+
+#popup-text {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 30 px;
+}
+
+.pick {
+    position: relative;
+    top: 27%;
+    left: 5%;
+    display: inline-block;
+    width: 20%;
+    height: 50%;
+    text-align: center;
+    color: white;
+}
+
+.blue-enabled {
+    background-color: blue;
+    margin: 0 auto;
+}
+
+.disabled {
+    background-color: grey;
+}
+
+.red-enabled {
+    background-color: red;
+    margin: 0 auto;
+}
+
+#board-game {
+    display: inline-block;
+}
+
+#score {
+    width: auto;
+    display: inline-block;
+}
+
+#score-red {
+    padding-left: 10px;
+    background-color: red;
+}
+
+#score-blue {
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+#region-points .region {
+    width: 100px;
+    height: 100px;
+}
+
+#region-points .region {
+    display: absolute;
+}
+
+#region-points-0 {
+    padding-left: 0%;
+    padding-top: 25%;
+}
+
+#region-points-1 {
+    padding-left: 97%;
+    padding-top: 08%;
+}
+
+#region-points-2 {
+    padding-left: 97%;
+    padding-top: 25%;
+}
+
+#region-points-3 {
+    padding-left: 0%;
+    padding-top: 50%;
+}
+
+#region-points-4 {
+    padding-left: 97%;
+    padding-top: 44%;
+}
+
+#region-points .not {
+    background-color: orange;
+}
+
+#region-points .square {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 3px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 30px;
+}
+
+#region-points .yes {
+    background-color: green;
+}
+
+#circle-blue {
+    position: absolute;
+}
+
+#circle-red {
+    position: absolute;
+}
+
+.circle6 {
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    line-height: 150px;
+    z-index: 30;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    background-color: blue;
+}
+
+#region .circle6 {
+    width: 70px;
+    height: 70px;
+    border-radius: 70px;
+    line-height: 70px;
+    z-index: 30;
+    position: relative;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+}
+
+#region #qin6red {
+    padding-left: 9%;
+    padding-top: 0%;
+}
+
+#region #chu6red {
+    padding-left: 28%;
+    padding-top: 0%;
+}
+
+#region #wu6red {
+    padding-left: 83%;
+    padding-top: 0%;
+}
+
+#region #hanqi6red {
+    padding-left: 65%;
+    padding-top: 0%;
+}
+
+#region #jinyan6red {
+    padding-left: 45%;
+    padding-top: 0%;
+}
+
+#region #qin6blue {
+    padding-left: 8%;
+    padding-top: 58%;
+}
+
+#region #chu6blue {
+    padding-left: 28%;
+    padding-top: 58%;
+}
+
+#region #jinyan6blue {
+    padding-left: 45%;
+    padding-top: 58%;
+}
+
+#region #hanqi6blue {
+    padding-left: 65%;
+    padding-top: 58%;
+}
+
+#region #wu6blue {
+    padding-left: 85%;
+    padding-top: 58%;
+}
+
+.card {
+    width: 100%;
+    background-color: red;
+}
+
+.card-square {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    font-size: 10px;
+    width: 30px;
+    height: 40px;
+}
+
+.card-text {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    font-size: 10px;
+    height: 40px;
+    width: 165px;
+}
+
+.dropCardArea-inner {
+    position: absolute;
+    width: 160px;
+    line-height: 40px;
+    z-index: 30;
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    background-color: blue;
+}
+
+.dropCardArea {
+    position: absolute;
+}
+
+.dropCardArea0 {
+    padding-left: 0%;
+    padding-top: 65%;
+}
+
+    .dropCardArea0 div {
+    }
+
+.dropCardArea1 {
+    padding-left: 20%;
+    padding-top: 65%;
+}
+
+    .dropCardArea1 div {
+    }
+
+.dropCardArea2 {
+    padding-left: 40%;
+    padding-top: 65%;
+}
+
+    .dropCardArea2 div {
+    }
+
+.dropCardArea3 {
+    padding-left: 60%;
+    padding-top: 65%;
+}
+
+    .dropCardArea3 div {
+    }
+
+.dropCardArea4 {
+    padding-left: 80%;
+    padding-top: 65%;
+}
+
+    .dropCardArea4 div {
+    }

@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="/js/socket.io-1.2.0.js"></script>
+    <script src="/js/jquery-1.11.1.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+</head>
+<body>
+    <div id="container-top-right">
+        <div id="status" class="ready">Click on me</div>
+        <div id="hand">
+            Cartes
+            <div id="cartes">
+            </div>
+        </div>
+    </div>
+
+    <h1>Team</h1>
+    <div id="pickAcolor-background">
+        <div id="pickAcolor" class="PopupPanel">
+            <div id="popup-text"> Pick a player</div>
+            <div id="blue" class="pick blue-enabled">Chu</div>
+            <div id="red" class="pick red-enabled">Sun Tzu</div>
+        </div>
+    </div>
+
+    <div id="board-game">
+        <div id="container">
+            <div id="region">
+                <div id="qin" class="region"><div id="region-0" class="circle neutral"></div></div>
+                <div id="jinyan" class="region"><div id="region-1" class="circle neutral"></div></div>
+                <div id="hanqi" class="region"><div id="region-2" class="circle neutral"></div></div>
+                <div id="chu" class="region"><div id="region-3" class="circle neutral"></div></div>
+                <div id="wu" class="region"><div id="region-4" class="circle neutral"></div></div>
+                <div id="qin6red" class="region"><div id="marker0red" class="circle6 red">6</div></div>
+                <div id="jinyan6red" class="region"><div id="marker1red" class="circle6 red">6</div></div>
+                <div id="chu6red" class="region"><div id="marker2red" class="circle6 red">6</div></div>
+                <div id="wu6red" class="region"><div id="marker3red" class="circle6 red">6</div></div>
+                <div id="hanqi6red" class="region"><div id="marker4red" class="circle6 red">6</div></div>
+                <div id="qin6blue" class="region"><div id="marker0blue" class="circle6 blue">6</div></div>
+                <div id="jinyan6blue" class="region"><div id="marker1blue" class="circle6 blue">6</div></div>
+                <div id="chu6blue" class="region"><div id="marker2blue" class="circle6 blue">6</div></div>
+                <div id="wu6blue" class="region"><div id="marker3blue" class="circle6 blue">6</div></div>
+                <div id="hanqi6blue" class="region"><div id="marker4blue" class="circle6 blue">6</div></div>
+                <div class="dropCardArea dropCardArea0"><div class="dropCardArea-inner" id="card-0">Card 1</div></div>
+                <div class="dropCardArea dropCardArea1"><div class="dropCardArea-inner" id="card-1">Card 1</div></div>
+                <div class="dropCardArea dropCardArea2"><div class="dropCardArea-inner" id="card-2">Card 3</div></div>
+                <div class="dropCardArea dropCardArea3"><div class="dropCardArea-inner" id="card-3">Card 4</div></div>
+                <div class="dropCardArea dropCardArea4"><div class="dropCardArea-inner" id="card-4">Card 5</div></div>
+            </div>
+
+
+            <div id="region-points">
+                <div id="region-points-0" class="region">
+                    <div id="1" class="square 1count not">4</div>
+                    <div id="2" class="square 2count not">2</div>
+                    <div id="3" class="square 3count yes">4</div>
+                </div>
+                <div id="region-points-1" class="region">
+                    <div id="1" class="square 1count not">4</div>
+                    <div id="2" class="square 2count not">2</div>
+                    <div id="3" class="square 3count yes">4</div>
+                </div>
+                <div id="region-points-2" class="region">
+                    <div id="1" class="square 1count not">4</div>
+                    <div id="2" class="square 2count not">2</div>
+                    <div id="3" class="square 3count yes">4</div>
+                </div>
+                <div id="region-points-3" class="region">
+                    <div id="1" class="square 1count not">4</div>
+                    <div id="2" class="square 2count not">2</div>
+                    <div id="3" class="square 3count yes">4</div>
+                </div>
+                <div id="region-points-4" class="region">
+                    <div id="1" class="square 1count not">4</div>
+                    <div id="2" class="square 2count not">2</div>
+                    <div id="3" class="square 3count yes">4</div>
+                </div>
+            </div>
+            <div id="round"><div id="round-child">X</div></div>
+        </div>
+        <div id="score">
+            <div id="score-red">
+                <h1>Sun Tzu</h1>
+                <div id="points">Points</div>
+                <div id="">Army Dead</div>
+                <div id="">Army Left</div>
+            </div>
+            <div id="score-blue">
+                <h1>General Chu</h1>
+                <div id="points">Points</div>
+                <div id="">Army Dead</div>
+                <div id="">Army Left</div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/script.js"></script>
+    <ul id="messages"></ul>
+    <form action="">
+        <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+</body>
+</html>

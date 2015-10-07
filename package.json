@@ -1,0 +1,14 @@
+{
+  "name": "sunTzu",
+  "version": "0.0.0",
+  "description": "sunTzu",
+  "main": "server.js",
+  "author": {
+    "name": "Quentin",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "4.10.2",
+    "socket.io": "1.2.0"
+  }
+}
